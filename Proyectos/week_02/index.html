@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧘‍♀️ Meditación & Mindfulness - Gestor de Sesiones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <h1>🧘‍♀️ Meditación & Mindfulness</h1>
+      <p class="subtitle">Gestiona tus sesiones de bienestar y paz interior</p>
+    </header>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Total</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-card stat-active">
+          <span class="stat-label">Activas</span>
+          <span class="stat-value" id="stat-active">0</span>
+        </div>
+        <div class="stat-card stat-inactive">
+          <span class="stat-label">Inactivas</span>
+          <span class="stat-value" id="stat-inactive">0</span>
+        </div>
+      </div>
+      <div class="stats-details" id="stats-details">
+        Sin sesiones aún
+      </div>
+      <div class="total-time" id="total-time">
+        ⏱️ Tiempo total: 0 min
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="form-section">
+      <h2 id="form-title">➕ Nueva Sesión</h2>
+      <form id="item-form" class="item-form">
+        <div class="form-group">
+          <label for="item-name">Nombre de la sesión *</label>
+          <input 
+            type="text" 
+            id="item-name" 
+            placeholder="Ej: Meditación matutina para energía"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="item-description">Descripción</label>
+          <textarea 
+            id="item-description" 
+            placeholder="Describe la sesión, beneficios, o lo que necesites recordar..."
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="item-category">Categoría</label>
+            <select id="item-category">
+              <option value="meditation">🧘‍♀️ Meditación Guiada</option>
+              <option value="breathing">💨 Respiración</option>
+              <option value="yoga">🤸‍♀️ Yoga/Estiramientos</option>
+              <option value="mindfulness">🌸 Mindfulness</option>
+              <option value="sounds">🎵 Sonidos Relajantes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="item-priority">Prioridad</label>
+            <select id="item-priority">
+              <option value="low">🟢 Opcional</option>
+              <option value="medium" selected>🟡 Regular</option>
+              <option value="high">🔴 Urgente</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="item-duration">Duración (min)</label>
+            <input 
+              type="number" 
+              id="item-duration" 
+              min="1" 
+              max="120" 
+              value="10"
+            >
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">
+            Crear
+          </button>
+          <button 
+            type="button" 
+            id="cancel-btn" 
+            class="btn btn-secondary" 
+            style="display: none;"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- FILTROS Y BÚSQUEDA -->
+    <section class="filters-section">
+      <h2>🔍 Buscar y Filtrar</h2>
+      
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Buscar por nombre o descripción..."
+        >
+      </div>
+
+      <div class="filters-grid">
+        <div class="filter-group">
+          <label for="filter-status">Estado</label>
+          <select id="filter-status">
+            <option value="all">Todas</option>
+            <option value="active">Activas</option>
+            <option value="inactive">Inactivas</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-category">Categoría</label>
+          <select id="filter-category">
+            <option value="all">Todas</option>
+            <option value="meditation">🧘‍♀️ Meditación</option>
+            <option value="breathing">💨 Respiración</option>
+            <option value="yoga">🤸‍♀️ Yoga</option>
+            <option value="mindfulness">🌸 Mindfulness</option>
+            <option value="sounds">🎵 Sonidos</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-priority">Prioridad</label>
+          <select id="filter-priority">
+            <option value="all">Todas</option>
+            <option value="high">🔴 Urgente</option>
+            <option value="medium">🟡 Regular</option>
+            <option value="low">🟢 Opcional</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="clear-inactive" class="btn btn-danger">
+        🗑️ Limpiar Inactivas
+      </button>
+    </section>
+
+    <!-- LISTA DE SESIONES -->
+    <section class="items-section">
+      <h2>📋 Mis Sesiones</h2>
+      
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">🧘‍♀️</div>
+        <h3>No hay sesiones aún</h3>
+        <p>Comienza creando tu primera sesión de meditación</p>
+      </div>
+
+      <div id="item-list" class="item-list">
+        <!-- Las sesiones se renderizarán aquí dinámicamente -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>💜 Cuida tu mente, cuida tu cuerpo</p>
+      <p class="footer-note">Proyecto ES2023 - Inmutabilidad y Array Methods</p>
+    </footer>
+  </div>
+
+  <script src="meditation-app.js"></script>
+</body>
+</html>
