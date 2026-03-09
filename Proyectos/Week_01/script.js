@@ -10,7 +10,7 @@
  * Sistema de gestión de sesiones de meditación, yoga,
  * respiración consciente y prácticas de bienestar.
  *
- * Autor: [Joshua Nocua]
+ * Autor: Joshua Nocua
  * Fecha: Marzo 2026
  */
 
