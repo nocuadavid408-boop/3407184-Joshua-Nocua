@@ -82,7 +82,7 @@ console.log('Dominio:          Meditación y Mindfulness');
 console.log('Entidad:          sesión de meditación');
 
 // Total de sesiones en el sistema
-console.log('Total registros:  47');
+console.log('Total registros:  48');
 
 console.log('');
 
