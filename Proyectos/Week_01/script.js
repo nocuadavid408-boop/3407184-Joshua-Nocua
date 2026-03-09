@@ -10,7 +10,7 @@
  * Sistema de gestión de sesiones de meditación, yoga,
  * respiración consciente y prácticas de bienestar.
  *
- * Autor: [Tu nombre]
+ * Autor: [Joshua Nocua]
  * Fecha: Marzo 2026
  */
 
@@ -35,7 +35,7 @@ console.log('--------------------');
 console.log('Nombre:          Meditación Matutina Energizante');
 
 // Código único de la sesión
-console.log('Código:          MED-2024-001');
+console.log('Código:          JDNC-0525');
 
 // Categoría o tipo de práctica
 console.log('Categoría:       Meditación Guiada - Nivel Principiante');

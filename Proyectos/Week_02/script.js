@@ -10,7 +10,7 @@
 // ⚠️  POLÍTICA ANTICOPIA: Tu implementación debe ser
 //    única y coherente con tu dominio asignado.
 //
-// Autor: [Tu nombre]
+// Autor: [Joshua Nocua]
 // Fecha: Marzo 2026
 // ============================================
 
